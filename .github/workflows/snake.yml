@@ -29,8 +29,8 @@ jobs:
         with:
           github_user_name: NSHUNG15
           outputs: |
-            dist/github-contribution-grid-snake-fire.svg?palette=github-fire
-            dist/github-contribution-grid-snake-ice.svg?palette=github-ice
+            dist/github-contribution-grid-snake-fire.svg?palette=github-fire&color_snake=#ff6b35&color_dots=#fff5f5,#fed7cc,#ff9f7a,#ff6b35,#e55100
+            dist/github-contribution-grid-snake-ice.svg?palette=github-ice&color_snake=#00d4aa&color_dots=#0d1117,#1a5d67,#2d9ba8,#3fcfdb,#00d4aa
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           
