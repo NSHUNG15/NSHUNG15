@@ -28,7 +28,16 @@
 
 ## 🎮 GitHub Games Zone
   
-![Snake Game](https://github.com/NSHUNG15/NSHUNG15/blob/main/github-contribution-grid-snake.svg)
+<div align="center">
+  <h4>🔥 Fire Theme</h4>
+  <img src="https://raw.githubusercontent.com/NSHUNG15/NSHUNG15/output/github-contribution-grid-snake-fire.svg" alt="Fire Snake Game" />
+  <h4>🧊 Ice Theme</h4>
+  <img src="https://raw.githubusercontent.com/NSHUNG15/NSHUNG15/output/github-contribution-grid-snake-ice.svg" alt="Ice Snake Game" />
+  <h4>🌊 Ocean Theme</h4>
+  <img src="https://raw.githubusercontent.com/NSHUNG15/NSHUNG15/output/github-contribution-grid-snake-ocean.svg" alt="Ocean Snake Game" />
+  <h4>🌟 Classic Theme</h4>
+  <img src="https://raw.githubusercontent.com/NSHUNG15/NSHUNG15/output/github-contribution-grid-snake.svg" alt="Classic Snake Game" />
+</div>
 
 ### 🎖️ GitHub Profile Achievement Badges
 <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=NSHUNG15&theme=radical" alt="GitHub Profile Summary" />
