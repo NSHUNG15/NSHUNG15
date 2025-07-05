@@ -31,7 +31,6 @@
 <div align="center">
   
 ### 🐍 GitHub Snake Game
-![Snake Game](https://raw.githubusercontent.com/NSHUNG15/NSHUNG15/output/snake.svg)
 
 ### 🏆 GitHub Trophy Collection
 [![Trophy](https://github-profile-trophy.vercel.app/?username=NSHUNG15&theme=radical&row=2&column=4&margin-w=15&margin-h=15)](https://github.com/ryo-ma/github-profile-trophy)
@@ -39,37 +38,16 @@
 ### 🔥 GitHub Streak Counter
 [![GitHub Streak](https://streak-stats.demolab.com?user=NSHUNG15&theme=radical&hide_border=true&fire=FF6B35&ring=FF6B35&currStreakLabel=FF6B35)](https://git.io/streak-stats)
 
-### 📊 Contribution Graph
-[![Contribution Graph](https://github-readme-activity-graph.vercel.app/graph?username=NSHUNG15&theme=github-compact&hide_border=true&area=true&point=FF6B35&line=FF6B35&color=FF6B35)](https://github.com/ashutosh00710/github-readme-activity-graph)
-
 ### 🎖️ GitHub Profile Achievement Badges
 <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=NSHUNG15&theme=radical" alt="GitHub Profile Summary" />
 
-### 🎯 Random Dev Quote
+### 🎯 Dev Quote
 ![Quote](https://quotes-github-readme.vercel.app/api?type=horizontal&theme=radical)
 
-### 🚀 Profile Summary Cards
-<div align="center">
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=NSHUNG15&theme=radical" alt="Stats" />
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=NSHUNG15&theme=radical&utcOffset=7" alt="Productive Time" />
-</div>
+## 📈 GitHub Stats
 
-### 🎨 Language Usage Pie Chart
-<img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=NSHUNG15&theme=radical" alt="Languages" />
-
-### 🎪 Interactive Widgets
-<div align="center">
-  
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&size=18&pause=1000&color=FF6B35&center=true&vCenter=true&width=600&lines=🎮+Welcome+to+my+GitHub+Game+Zone!;🚀+Let's+code+and+have+fun+together!;🎯+Every+commit+is+a+new+adventure!;💡+Building+the+future+one+line+at+a+time!)](https://git.io/typing-svg)
-
-</div>
-
-### 🎲 GitHub Roulette
-<div align="center">
-  <img src="https://github-widgetbox.vercel.app/api/profile?username=NSHUNG15&data=followers,repositories,stars,commits&theme=radical" alt="GitHub Roulette" />
-</div>
-
-</div>
+![Hùng's GitHub Stats](https://github-readme-stats.vercel.app/api?username=NSHUNG15&show_icons=true&theme=tokyonight&hide_border=true)
+![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=NSHUNG15&layout=compact&theme=tokyonight&hide_border=true)
 
 ---
 
