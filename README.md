@@ -28,7 +28,7 @@
 
 ## 🎮 GitHub Games Zone
   
-![Snake Game](https://github.com/NSHUNG15/NSHUNG15/blob/output/github-contribution-grid-snake.svg)
+![Snake Game](https://github.com/NSHUNG15/NSHUNG15/blob/main/github-contribution-grid-snake.svg)
 
 ### 🎖️ GitHub Profile Achievement Badges
 <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=NSHUNG15&theme=radical" alt="GitHub Profile Summary" />
