@@ -1,198 +1,234 @@
-name: 🐍 Generate Snake Game & Update Profile
+# 🔥❄️ Fire & Ice Theme Configuration
+# GitHub Profile Snake Game & Animation Settings
+# Created for: Nguyễn Sinh Hùng (NSHUNG15)
 
-on:
-  # Runs on every push to main branch
-  push:
-    branches: [ main, master ]
-  
-  # Runs on schedule - every 12 hours
-  schedule:
-    - cron: "0 */12 * * *"
-  
-  # Allows manual trigger
-  workflow_dispatch:
+name: "Fire & Ice Snake Animation"
+version: "2.0"
+author: "NSHUNG15"
 
-permissions:
-  contents: write
-
-jobs:
-  generate-snake:
-    runs-on: ubuntu-latest
-    timeout-minutes: 10
+# 🎨 Color Themes
+themes:
+  fire:
+    name: "Fire Theme"
+    colors:
+      background: "#0a0a0a"
+      grid: "#1a1a1a"
+      snake_head: "#ff4500"
+      snake_body: 
+        - "#ff6600"
+        - "#ff8c00"
+        - "#ffa500"
+        - "#ffb84d"
+      food: "#ff0000"
+      text: "#ff7f50"
+      accent: "#dc143c"
+      glow: "#ff4500"
     
-    steps:
-      # Checkout repository
-      - name: 🛒 Checkout repository
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-        
-      # Generate multiple snake themes
-      - name: 🐍 Generate snake game - Light Theme
-        uses: Platane/snk/svg-only@v3
-        with:
-          github_user_name: NSHUNG15
-          outputs: |
-            github-contribution-grid-snake.svg
-            github-contribution-grid-snake-light.svg?palette=github-light
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          
-      - name: 🌙 Generate snake game - Dark Theme
-        uses: Platane/snk/svg-only@v3
-        with:
-          github_user_name: NSHUNG15
-          outputs: |
-            github-contribution-grid-snake-dark.svg?palette=github-dark
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          
-      - name: 🎨 Generate snake game - Ocean Theme
-        uses: Platane/snk/svg-only@v3
-        with:
-          github_user_name: NSHUNG15
-          outputs: |
-            github-contribution-grid-snake-ocean.svg?palette=ocean_dark
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          
-      - name: 🌸 Generate snake game - Pink Theme
-        uses: Platane/snk/svg-only@v3
-        with:
-          github_user_name: NSHUNG15
-          outputs: |
-            github-contribution-grid-snake-pink.svg?palette=pink
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          
-      - name: 🎯 Generate snake game - Radical Theme
-        uses: Platane/snk/svg-only@v3
-        with:
-          github_user_name: NSHUNG15
-          outputs: |
-            github-contribution-grid-snake-radical.svg?palette=radical
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          
-      - name: 🟢 Generate snake game - Green Theme
-        uses: Platane/snk/svg-only@v3
-        with:
-          github_user_name: NSHUNG15
-          outputs: |
-            github-contribution-grid-snake-green.svg?palette=green
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          
-      - name: 🔥 Generate snake game - Fire Theme
-        uses: Platane/snk/svg-only@v3
-        with:
-          github_user_name: NSHUNG15
-          outputs: |
-            github-contribution-grid-snake-fire.svg?palette=fire
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          
-      - name: 💜 Generate snake game - Purple Theme
-        uses: Platane/snk/svg-only@v3
-        with:
-          github_user_name: NSHUNG15
-          outputs: |
-            github-contribution-grid-snake-purple.svg?palette=purple
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          
-      - name: 🌈 Generate snake game - Rainbow Theme
-        uses: Platane/snk/svg-only@v3
-        with:
-          github_user_name: NSHUNG15
-          outputs: |
-            github-contribution-grid-snake-rainbow.svg?palette=rainbow
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      
-      # Create daily snack commit with themes
-      - name: 🍿 Daily snack commit with themes
-        run: |
-          # Create daily snacks file if it doesn't exist
-          if [ ! -f daily-snacks.md ]; then
-            echo "# 🍿 Daily Snacks - Multi-Theme Snake Collection!" > daily-snacks.md
-            echo "" >> daily-snacks.md
-            echo "## 🌈 Available Themes:" >> daily-snacks.md
-            echo "- 🐍 **Light Theme** - Clean and minimal" >> daily-snacks.md
-            echo "- 🌙 **Dark Theme** - Perfect for dark mode lovers" >> daily-snacks.md
-            echo "- 🎨 **Ocean Theme** - Deep blue oceanic vibes" >> daily-snacks.md
-            echo "- 🌸 **Pink Theme** - Soft and elegant" >> daily-snacks.md
-            echo "- 🎯 **Radical Theme** - Bold and vibrant" >> daily-snacks.md
-            echo "- 🟢 **Green Theme** - Natural and fresh" >> daily-snacks.md
-            echo "- 🔥 **Fire Theme** - Hot and energetic" >> daily-snacks.md
-            echo "- 💜 **Purple Theme** - Royal and mysterious" >> daily-snacks.md
-            echo "- 🌈 **Rainbow Theme** - Colorful and fun" >> daily-snacks.md
-            echo "" >> daily-snacks.md
-            echo "## 📅 Update Log:" >> daily-snacks.md
-            echo "" >> daily-snacks.md
-          fi
-          
-          # Array of fun emojis for variety
-          emojis=("🍿" "🐍" "🎨" "🌟" "🚀" "🎯" "🔥" "⚡" "💎" "🌈" "🎭" "🎪" "🎨" "🌙" "☀️")
-          emoji=${emojis[$RANDOM % ${#emojis[@]}]}
-          
-          # Array of themes for random selection
-          themes=("Light" "Dark" "Ocean" "Pink" "Radical" "Green" "Fire" "Purple" "Rainbow")
-          theme=${themes[$RANDOM % ${#themes[@]}]}
-          
-          # Add today's snack with random theme
-          echo "- $emoji $(date '+%Y-%m-%d %H:%M:%S') - Daily snack with $theme theme! 🎨" >> daily-snacks.md
-          
-          # Keep only last 50 entries (more history for themes)
-          tail -n 60 daily-snacks.md > temp-snacks.md
-          mv temp-snacks.md daily-snacks.md
-          
-      # Commit and push all changes
-      - name: 🚀 Commit and push changes
-        run: |
-          git config --local user.email "nshung0105@gmail.com"
-          git config --local user.name "Nguyễn Sinh Hùng"
-          git add .
-          
-          # Check if there are changes to commit
-          if git diff --staged --quiet; then
-            echo "No changes to commit"
-          else
-            git commit -m "🌈 Update multi-theme snake collection and daily snack [automated] $(date '+%Y-%m-%d')"
-            git push
-          fi
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  ice:
+    name: "Ice Theme"
+    colors:
+      background: "#0f0f23"
+      grid: "#1a1a2e"
+      snake_head: "#00bfff"
+      snake_body:
+        - "#4169e1"
+        - "#6495ed"
+        - "#87ceeb"
+        - "#add8e6"
+      food: "#00ffff"
+      text: "#b0e0e6"
+      accent: "#4682b4"
+      glow: "#00bfff"
 
-  update-readme:
-    runs-on: ubuntu-latest
-    needs: generate-snake
-    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+# 🎮 Game Configuration
+game:
+  width: 800
+  height: 200
+  speed: 150
+  snake_length: 4
+  food_count: 3
+  
+# 🎯 Animation Settings
+animation:
+  duration: 5000
+  frames: 60
+  smooth: true
+  glow_effect: true
+  particle_effects: true
+  
+# 📊 GitHub Integration
+github:
+  username: "NSHUNG15"
+  contribution_data: true
+  commit_colors:
+    fire_mode:
+      level_0: "#161b22"
+      level_1: "#ff4500"
+      level_2: "#ff6600"
+      level_3: "#ff8c00"
+      level_4: "#ffa500"
+    ice_mode:
+      level_0: "#161b22"
+      level_1: "#00bfff"
+      level_2: "#4169e1"
+      level_3: "#6495ed"
+      level_4: "#87ceeb"
+
+# 🌟 Special Effects
+effects:
+  fire_particles:
+    enabled: true
+    color: "#ff4500"
+    size: 2
+    count: 20
+    speed: 0.5
     
-    steps:
-      - name: 🛒 Checkout repository
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-        
-      # Update README timestamp
-      - name: 📊 Update README stats
-        run: |
-          # Create a simple stats update
-          echo "Last updated: $(date '+%Y-%m-%d %H:%M:%S')" > last-update.txt
-          
-      # Commit README updates
-      - name: 🔄 Commit README updates
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action Bot"
-          git add .
-          
-          if git diff --staged --quiet; then
-            echo "No changes to commit"
-          else
-            git commit -m "📊 Update profile stats [automated]"
-            git push
-          fi
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  ice_crystals:
+    enabled: true
+    color: "#00bfff"
+    size: 1.5
+    count: 15
+    speed: 0.3
+    
+  glow:
+    enabled: true
+    intensity: 0.8
+    blur: 4
+    
+  transitions:
+    fire_to_ice: 
+      duration: 2000
+      type: "fade"
+    ice_to_fire:
+      duration: 2000
+      type: "slide"
+
+# 🎨 Visual Enhancements
+visual:
+  borders:
+    fire: "2px solid #ff4500"
+    ice: "2px solid #00bfff"
+    
+  shadows:
+    fire: "0 0 20px #ff4500"
+    ice: "0 0 20px #00bfff"
+    
+  gradients:
+    fire_background: "linear-gradient(45deg, #1a0000, #330000, #1a0000)"
+    ice_background: "linear-gradient(45deg, #000033, #001133, #000033)"
+
+# 🚀 Performance Settings
+performance:
+  optimization: true
+  gpu_acceleration: true
+  memory_limit: "50MB"
+  fps_target: 60
+  
+# 📱 Responsive Design
+responsive:
+  mobile:
+    width: 400
+    height: 150
+    snake_length: 3
+    
+  tablet:
+    width: 600
+    height: 175
+    snake_length: 4
+    
+  desktop:
+    width: 800
+    height: 200
+    snake_length: 5
+
+# 🎵 Audio (Optional)
+audio:
+  enabled: false
+  fire_sound: "crackle.mp3"
+  ice_sound: "freeze.mp3"
+  volume: 0.3
+
+# 🔧 Build Configuration
+build:
+  output_format: "svg"
+  optimization: true
+  compression: true
+  minify: true
+  
+  paths:
+    output: "./dist/snake.svg"
+    assets: "./assets/"
+    temp: "./temp/"
+
+# 📦 Dependencies
+dependencies:
+  - "svg-animations@2.0.0"
+  - "color-gradients@1.5.0"
+  - "particle-effects@1.2.0"
+  - "github-api@3.1.0"
+
+# 🔄 Automation
+automation:
+  schedule: "0 */6 * * *"  # Every 6 hours
+  auto_commit: true
+  commit_message: "🔥❄️ Update fire & ice snake animation"
+  
+# 🎨 Custom Styling
+custom_css: |
+  .fire-theme {
+    filter: drop-shadow(0 0 10px #ff4500);
+    animation: flicker 2s infinite alternate;
+  }
+  
+  .ice-theme {
+    filter: drop-shadow(0 0 10px #00bfff);
+    animation: shimmer 3s infinite;
+  }
+  
+  @keyframes flicker {
+    0% { opacity: 0.8; }
+    100% { opacity: 1; }
+  }
+  
+  @keyframes shimmer {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+  }
+
+# 🌈 Color Palette Extensions
+extended_colors:
+  fire_variants:
+    ember: "#ff6b35"
+    flame: "#f7931e"
+    inferno: "#ff0000"
+    magma: "#ff4500"
+    
+  ice_variants:
+    frost: "#e6f3ff"
+    arctic: "#b3d9ff"
+    glacier: "#4da6ff"
+    blizzard: "#0080ff"
+
+# 🎯 Metadata
+metadata:
+  title: "Fire & Ice Snake Animation"
+  description: "Dynamic GitHub profile snake game with fire and ice themes"
+  keywords: ["github", "snake", "animation", "fire", "ice", "profile"]
+  created: "2025-07-05"
+  updated: "2025-07-05"
+  version: "2.0.0"
+  license: "MIT"
+
+# 🔥❄️ Theme Switching
+theme_switching:
+  enabled: true
+  method: "time_based"  # or "click_based", "random"
+  interval: 10000  # 10 seconds
+  transition_duration: 1500
+
+# 📊 Analytics (Optional)
+analytics:
+  enabled: false
+  track_views: true
+  track_interactions: true
+  provider: "github_insights"
