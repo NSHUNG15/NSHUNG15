@@ -28,7 +28,42 @@
 
 ## 🎮 GitHub Games Zone
   
-![Snake Game](https://github.com/NSHUNG15/NSHUNG15/blob/main/github-contribution-grid-snake.svg)
+<div align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://github.com/NSHUNG15/NSHUNG15/blob/main/github-contribution-grid-snake-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="https://github.com/NSHUNG15/NSHUNG15/blob/main/github-contribution-grid-snake.svg">
+    <img alt="GitHub Snake Game" src="https://github.com/NSHUNG15/NSHUNG15/blob/main/github-contribution-grid-snake.svg">
+  </picture>
+</div>
+
+<div align="center">
+  <details>
+    <summary>🎨 <b>View More Themes</b></summary>
+    <br>
+    <table>
+      <tr>
+        <td align="center">
+          <b>🌊 Ocean</b><br>
+          <img src="https://github.com/NSHUNG15/NSHUNG15/blob/main/github-contribution-grid-snake-ocean.svg" width="300"/>
+        </td>
+        <td align="center">
+          <b>🌸 Pink</b><br>
+          <img src="https://github.com/NSHUNG15/NSHUNG15/blob/main/github-contribution-grid-snake-pink.svg" width="300"/>
+        </td>
+      </tr>
+      <tr>
+        <td align="center">
+          <b>🎯 Radical</b><br>
+          <img src="https://github.com/NSHUNG15/NSHUNG15/blob/main/github-contribution-grid-snake-radical.svg" width="300"/>
+        </td>
+        <td align="center">
+          <b>🔥 Fire</b><br>
+          <img src="https://github.com/NSHUNG15/NSHUNG15/blob/main/github-contribution-grid-snake-fire.svg" width="300"/>
+        </td>
+      </tr>
+    </table>
+  </details>
+</div>
 
 ### 🎖️ GitHub Profile Achievement Badges
 <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=NSHUNG15&theme=radical" alt="GitHub Profile Summary" />

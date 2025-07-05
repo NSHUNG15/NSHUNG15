@@ -27,31 +27,124 @@ jobs:
         with:
           fetch-depth: 0
         
-      # Generate snake animation
-      - name: 🐍 Generate snake game from GitHub contributions
+      # Generate multiple snake themes
+      - name: 🐍 Generate snake game - Light Theme
         uses: Platane/snk/svg-only@v3
         with:
           github_user_name: NSHUNG15
           outputs: |
             github-contribution-grid-snake.svg
+            github-contribution-grid-snake-light.svg?palette=github-light
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
+      - name: 🌙 Generate snake game - Dark Theme
+        uses: Platane/snk/svg-only@v3
+        with:
+          github_user_name: NSHUNG15
+          outputs: |
             github-contribution-grid-snake-dark.svg?palette=github-dark
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
+      - name: 🎨 Generate snake game - Ocean Theme
+        uses: Platane/snk/svg-only@v3
+        with:
+          github_user_name: NSHUNG15
+          outputs: |
+            github-contribution-grid-snake-ocean.svg?palette=ocean_dark
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
+      - name: 🌸 Generate snake game - Pink Theme
+        uses: Platane/snk/svg-only@v3
+        with:
+          github_user_name: NSHUNG15
+          outputs: |
+            github-contribution-grid-snake-pink.svg?palette=pink
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
+      - name: 🎯 Generate snake game - Radical Theme
+        uses: Platane/snk/svg-only@v3
+        with:
+          github_user_name: NSHUNG15
+          outputs: |
+            github-contribution-grid-snake-radical.svg?palette=radical
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
+      - name: 🟢 Generate snake game - Green Theme
+        uses: Platane/snk/svg-only@v3
+        with:
+          github_user_name: NSHUNG15
+          outputs: |
+            github-contribution-grid-snake-green.svg?palette=green
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
+      - name: 🔥 Generate snake game - Fire Theme
+        uses: Platane/snk/svg-only@v3
+        with:
+          github_user_name: NSHUNG15
+          outputs: |
+            github-contribution-grid-snake-fire.svg?palette=fire
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
+      - name: 💜 Generate snake game - Purple Theme
+        uses: Platane/snk/svg-only@v3
+        with:
+          github_user_name: NSHUNG15
+          outputs: |
+            github-contribution-grid-snake-purple.svg?palette=purple
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
+      - name: 🌈 Generate snake game - Rainbow Theme
+        uses: Platane/snk/svg-only@v3
+        with:
+          github_user_name: NSHUNG15
+          outputs: |
+            github-contribution-grid-snake-rainbow.svg?palette=rainbow
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       
-      # Create daily snack commit
-      - name: 🍿 Daily snack commit
+      # Create daily snack commit with themes
+      - name: 🍿 Daily snack commit with themes
         run: |
           # Create daily snacks file if it doesn't exist
           if [ ! -f daily-snacks.md ]; then
-            echo "# 🍿 Daily Snacks - Keeping the streak alive!" > daily-snacks.md
+            echo "# 🍿 Daily Snacks - Multi-Theme Snake Collection!" > daily-snacks.md
+            echo "" >> daily-snacks.md
+            echo "## 🌈 Available Themes:" >> daily-snacks.md
+            echo "- 🐍 **Light Theme** - Clean and minimal" >> daily-snacks.md
+            echo "- 🌙 **Dark Theme** - Perfect for dark mode lovers" >> daily-snacks.md
+            echo "- 🎨 **Ocean Theme** - Deep blue oceanic vibes" >> daily-snacks.md
+            echo "- 🌸 **Pink Theme** - Soft and elegant" >> daily-snacks.md
+            echo "- 🎯 **Radical Theme** - Bold and vibrant" >> daily-snacks.md
+            echo "- 🟢 **Green Theme** - Natural and fresh" >> daily-snacks.md
+            echo "- 🔥 **Fire Theme** - Hot and energetic" >> daily-snacks.md
+            echo "- 💜 **Purple Theme** - Royal and mysterious" >> daily-snacks.md
+            echo "- 🌈 **Rainbow Theme** - Colorful and fun" >> daily-snacks.md
+            echo "" >> daily-snacks.md
+            echo "## 📅 Update Log:" >> daily-snacks.md
             echo "" >> daily-snacks.md
           fi
           
-          # Add today's snack
-          echo "- 🍿 $(date '+%Y-%m-%d %H:%M:%S') - Daily snack commit!" >> daily-snacks.md
+          # Array of fun emojis for variety
+          emojis=("🍿" "🐍" "🎨" "🌟" "🚀" "🎯" "🔥" "⚡" "💎" "🌈" "🎭" "🎪" "🎨" "🌙" "☀️")
+          emoji=${emojis[$RANDOM % ${#emojis[@]}]}
           
-          # Keep only last 30 entries
-          tail -n 31 daily-snacks.md > temp-snacks.md
+          # Array of themes for random selection
+          themes=("Light" "Dark" "Ocean" "Pink" "Radical" "Green" "Fire" "Purple" "Rainbow")
+          theme=${themes[$RANDOM % ${#themes[@]}]}
+          
+          # Add today's snack with random theme
+          echo "- $emoji $(date '+%Y-%m-%d %H:%M:%S') - Daily snack with $theme theme! 🎨" >> daily-snacks.md
+          
+          # Keep only last 50 entries (more history for themes)
+          tail -n 60 daily-snacks.md > temp-snacks.md
           mv temp-snacks.md daily-snacks.md
           
       # Commit and push all changes
@@ -65,7 +158,7 @@ jobs:
           if git diff --staged --quiet; then
             echo "No changes to commit"
           else
-            git commit -m "🐍 Update snake game and daily snack [automated] $(date '+%Y-%m-%d')"
+            git commit -m "🌈 Update multi-theme snake collection and daily snack [automated] $(date '+%Y-%m-%d')"
             git push
           fi
         env:
