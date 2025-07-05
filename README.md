@@ -27,8 +27,6 @@
 ---
 
 ## 🎮 GitHub Games Zone
-
-<div align="center">
   
 ### 🐍 GitHub Snake Game
 
@@ -41,13 +39,12 @@
 ### 🎖️ GitHub Profile Achievement Badges
 <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=NSHUNG15&theme=radical" alt="GitHub Profile Summary" />
 
-### 🎯 Dev Quote
-![Quote](https://quotes-github-readme.vercel.app/api?type=horizontal&theme=radical)
-
 ## 📈 GitHub Stats
-
 ![Hùng's GitHub Stats](https://github-readme-stats.vercel.app/api?username=NSHUNG15&show_icons=true&theme=tokyonight&hide_border=true)
 ![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=NSHUNG15&layout=compact&theme=tokyonight&hide_border=true)
+
+### 🎯 Dev Quote
+![Quote](https://quotes-github-readme.vercel.app/api?type=horizontal&theme=radical)
 
 ---
 
