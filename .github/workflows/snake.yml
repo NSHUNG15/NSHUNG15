@@ -3,7 +3,7 @@ name: Generate Snake Game
 on:
   # run automatically every 12 hours
   schedule:
-    - cron: "0 */12 * * *"
+    - cron: "0 */6 * * *"
   
   # allows to manually run the job at any time
   workflow_dispatch:
@@ -25,12 +25,8 @@ jobs:
         with:
           github_user_name: NSHUNG15
           outputs: |
-            dist/github-contribution-grid-snake.svg
-            dist/github-contribution-grid-snake-dark.svg?palette=github-dark
             dist/github-contribution-grid-snake-fire.svg?palette=github-fire
             dist/github-contribution-grid-snake-ice.svg?palette=github-ice
-            dist/github-contribution-grid-snake-ocean.svg?palette=ocean_blue
-            dist/github-contribution-grid-snake-purple.svg?palette=purple
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           

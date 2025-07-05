@@ -29,14 +29,11 @@
 ## 🎮 GitHub Games Zone
   
 <div align="center">
-  <h4>🔥 Fire Theme</h4>
-  <img src="https://raw.githubusercontent.com/NSHUNG15/NSHUNG15/output/github-contribution-grid-snake-fire.svg" alt="Fire Snake Game" />
-  <h4>🧊 Ice Theme</h4>
-  <img src="https://raw.githubusercontent.com/NSHUNG15/NSHUNG15/output/github-contribution-grid-snake-ice.svg" alt="Ice Snake Game" />
-  <h4>🌊 Ocean Theme</h4>
-  <img src="https://raw.githubusercontent.com/NSHUNG15/NSHUNG15/output/github-contribution-grid-snake-ocean.svg" alt="Ocean Snake Game" />
-  <h4>🌟 Classic Theme</h4>
-  <img src="https://raw.githubusercontent.com/NSHUNG15/NSHUNG15/output/github-contribution-grid-snake.svg" alt="Classic Snake Game" />
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/NSHUNG15/NSHUNG15/output/github-contribution-grid-snake-ice.svg">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/NSHUNG15/NSHUNG15/output/github-contribution-grid-snake-fire.svg">
+    <img alt="GitHub Snake Game" src="https://raw.githubusercontent.com/NSHUNG15/NSHUNG15/output/github-contribution-grid-snake-fire.svg">
+  </picture>
 </div>
 
 ### 🎖️ GitHub Profile Achievement Badges
