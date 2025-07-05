@@ -1,26 +1,109 @@
-name: Generate Snake
+name: 🐍 Generate Snake Game & Update Profile
 
 on:
+  # Runs on every push to main branch
+  push:
+    branches: [ main ]
+  
+  # Runs on schedule - every 12 hours
   schedule:
-    - cron: "0 */6 * * *"
+    - cron: "0 */12 * * *"
+  
+  # Allows manual trigger
   workflow_dispatch:
 
 jobs:
-  generate:
+  generate-snake:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     
     steps:
-      - name: generate snake.svg
+      # Checkout repository
+      - name: 🛒 Checkout repository
+        uses: actions/checkout@v4
+        
+      # Generate snake animation
+      - name: 🐍 Generate snake game from GitHub contributions
         uses: Platane/snk/svg-only@v3
         with:
-          github_user_name: NSHUNG15
-          outputs: dist/snake.svg?palette=github-dark
+          github_user_name: ${{ github.repository_owner }}
+          outputs: |
+            dist/github-contribution-grid-snake.svg
+            dist/github-contribution-grid-snake-dark.svg?palette=github-dark
+            dist/github-contribution-grid-snake.gif
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      
+      # Update README with latest stats
+      - name: 📊 Update README with latest stats
+        run: |
+          echo "🔄 Updating README with latest GitHub stats..."
+          # You can add custom scripts here to update your README
+          # For example, updating timestamps, counters, etc.
           
-      - name: push snake.svg to the output branch
-        uses: crazy-max/ghaction-github-pages@v3.1.0
-        with:
-          target_branch: output
-          build_dir: dist
+      # Commit and push changes
+      - name: 🚀 Commit and push changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add .
+          git diff --staged --quiet || git commit -m "🐍 Update snake game and profile stats [automated]"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  update-profile:
+    runs-on: ubuntu-latest
+    needs: generate-snake
+    
+    steps:
+      - name: 🛒 Checkout repository
+        uses: actions/checkout@v4
+        
+      # Update profile view counter
+      - name: 📈 Update profile views
+        run: |
+          echo "📊 Profile updated at: $(date)" >> profile-updates.log
+          
+      # Auto-commit daily updates
+      - name: 🎯 Auto-commit daily snack
+        run: |
+          git config --local user.email "nshung0105@gmail.com"
+          git config --local user.name "Nguyễn Sinh Hùng"
+          
+          # Create a small daily commit to maintain streak
+          echo "🍿 Daily snack commit - $(date '+%Y-%m-%d %H:%M:%S')" >> daily-snacks.md
+          
+          git add .
+          git commit -m "🍿 Daily snack commit - keeping the streak alive! 🔥" || echo "No changes to commit"
+          git push || echo "Nothing to push"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  cleanup:
+    runs-on: ubuntu-latest
+    needs: [generate-snake, update-profile]
+    
+    steps:
+      - name: 🛒 Checkout repository
+        uses: actions/checkout@v4
+        
+      # Clean up old files if needed
+      - name: 🧹 Cleanup old files
+        run: |
+          # Keep only last 30 days of daily snacks
+          if [ -f daily-snacks.md ]; then
+            tail -n 30 daily-snacks.md > temp-snacks.md
+            mv temp-snacks.md daily-snacks.md
+          fi
+          
+      # Final commit for cleanup
+      - name: 🔄 Final cleanup commit
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "Cleanup Bot"
+          git add .
+          git diff --staged --quiet || git commit -m "🧹 Automated cleanup [bot]"
+          git push
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

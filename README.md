@@ -28,13 +28,7 @@
 
 ## 🎮 GitHub Games Zone
   
-### 🐍 GitHub Snake Game
-
-### 🏆 GitHub Trophy Collection
-[![Trophy](https://github-profile-trophy.vercel.app/?username=NSHUNG15&theme=radical&row=2&column=4&margin-w=15&margin-h=15)](https://github.com/ryo-ma/github-profile-trophy)
-
-### 🔥 GitHub Streak Counter
-[![GitHub Streak](https://streak-stats.demolab.com?user=NSHUNG15&theme=radical&hide_border=true&fire=FF6B35&ring=FF6B35&currStreakLabel=FF6B35)](https://git.io/streak-stats)
+![Snake Game](https://github.com/NSHUNG15/NSHUNG15/blob/output/github-contribution-grid-snake.svg)
 
 ### 🎖️ GitHub Profile Achievement Badges
 <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=NSHUNG15&theme=radical" alt="GitHub Profile Summary" />
